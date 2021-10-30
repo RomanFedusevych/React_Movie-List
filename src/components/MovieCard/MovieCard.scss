@@ -1,0 +1,41 @@
+.movieCard {
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5eeee;
+    transform: scale(1.01);
+  }
+  &__img {
+    width: 200px;
+  
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  &__title {
+    position: relative;
+    top: -10px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__year {
+    justify-self: end;
+    color: #726e6e;
+  }
+
+  &__genre {
+    justify-self: start;
+
+    &--title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+
+  &__overview {
+    display: none;
+  }
+}

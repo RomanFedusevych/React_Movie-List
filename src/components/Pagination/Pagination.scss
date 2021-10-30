@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 600px;
+  margin: 0 auto;
+
+  padding-top: 20px;
+
+  &__list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 100px;
+  }
+}

@@ -1,3 +1,78 @@
-.starter {
-  font-size: 18px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  background-color: #E5E5E5;
+
+  &__selector {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 660px) {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 1024px) {
+      justify-content: center;
+    }
+
+    &--text {
+      text-align: end;
+      font-size: 22px;
+      font-weight: 400;
+    }
+  }
+
+  &__select {
+    width: 30%;
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__movieList {
+    margin: 0 auto;
+    padding: 10px;
+
+    @media (max-width: 660px) {
+      margin: 0;
+    }
+  }
+
+  &__listContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    gap: 20px;
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__movieCard {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    height: 500px;
+    max-width: 300px;
+    padding: 0 10px;
+
+    background-color: #fff;
+    border-radius: 30px;
+    list-style: none;
+  }
 }

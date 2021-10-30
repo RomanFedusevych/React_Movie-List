@@ -1,27 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
+import { MovieList } from './components/MovieList';
+import { Pagination } from './components/Pagination/Pagination';
 
-interface Props {
-  onClick: () => void;
-}
+export const App = () => {
+  const [pageApi, setPageApi] = useState<number>(1);
+  const updateData = (pageNum: number) => {
+    setPageApi(pageNum);
+  };
 
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
-
-export const App: React.FC = () => {
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
+    <div className="App">
+      <div className="App__movieList">
+        <MovieList updateData={updateData} pageApi={pageApi} />
+        <Pagination pageApi={pageApi} setPageApi={setPageApi} />
+      </div>
     </div>
   );
 };
