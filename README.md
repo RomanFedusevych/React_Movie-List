@@ -5,6 +5,6 @@ To install all dependencies for this project.
 <h2>Command npm start</h3>
 Runs the app in the development mode.
 <br>
-<h2>Stack:</h2> React, React-Hooks, Type-Script, JS, HTML5, SASS Fully responsive layout was made using media queries, CSS Grid and Flexbox.
+<h2>Stack</h2> React, React-Hooks, Type-Script, JS, HTML5, SASS Fully responsive layout was made using media queries, CSS Grid and Flexbox.
 
-<h2>- [DEMO LINK]</h2>(https://romanfedusevych.github.io/React_Movie-List/)
+<h2>- [DEMO LINK](https://romanfedusevych.github.io/React_Movie-List/)</h2>
