@@ -11,7 +11,7 @@ export const MovieCard: React.FC<Props> = (props) => {
   const [genreName] = useState(data);
   let genreNameArr = '';
 
-  genreName.map((y) => {
+  genreName.forEach((y) => {
     for (let i = 0; i <= movie.genre_ids.length; i += 1) {
       if (y.id === movie.genre_ids[i]) {
         genreNameArr += `${y.name} | `;

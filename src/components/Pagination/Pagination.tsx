@@ -36,7 +36,11 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
               : 'pagination__item page-item'}
             key={number}
           >
-            <button type="button" onClick={() => setPageApi(number)}>
+            <button
+              className="pagination__button--link"
+              type="button"
+              onClick={() => setPageApi(number)}
+            >
               <a
                 href="/#"
                 className="pagination__link page-link"

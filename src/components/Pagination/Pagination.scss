@@ -19,5 +19,10 @@
 
   &__button {
     width: 100px;
+
+    &--link {
+      padding: 0; 
+      border: none;
+    }
   }
 }
