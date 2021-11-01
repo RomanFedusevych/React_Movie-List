@@ -38,12 +38,11 @@ export const MovieList: React.FC<Props> = ({ updateData, pageApi }) => {
     getMovies();
   }, [selectedOption, pageApi]);
 
-  const sortedMovies = movies.sort((a: any, b: any) => new Date(b.release_date).getTime()
+  const sortedMovies = movies.sort((a: Movie, b: Movie) => new Date(b.release_date).getTime()
   - new Date(a.release_date).getTime());
   const lastPageIndex = currentPage + moviesPerPage;
   const firstPageIndex = lastPageIndex - moviesPerPage;
   const currentMovies = sortedMovies.slice(firstPageIndex, lastPageIndex);
-/* eslint-disable */
 
   return (
     <>

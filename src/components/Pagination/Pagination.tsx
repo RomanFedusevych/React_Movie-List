@@ -18,7 +18,6 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
   };
 
   return (
-    /* eslint-disable */
     <div className="App__pagination pagination">
       <button
         className={pageApi <= 1
@@ -37,13 +36,14 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
               : 'pagination__item page-item'}
             key={number}
           >
-            <a
-              href="#"
-              className="pagination__link page-link"
-              onClick={() => setPageApi(number)}
-            >
-              {number}
-            </a>
+            <button type="button" onClick={() => setPageApi(number)}>
+              <a
+                href="/#"
+                className="pagination__link page-link"
+              >
+                {number}
+              </a>
+            </button>
           </li>
         ))}
       </ul>
