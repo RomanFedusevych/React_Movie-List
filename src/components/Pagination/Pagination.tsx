@@ -56,7 +56,7 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
           ? 'pagination__button btn btn-secondary disabled'
           : 'pagination__button btn btn-dark'}
         type="button"
-        onClick={() => setPageApi(pageApi + 1)}
+        onClick={() => setPageApi(pageApi <= 10 ? pageApi + 1 : pageApi)}
       >
         Next
       </button>
