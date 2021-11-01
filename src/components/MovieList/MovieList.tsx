@@ -18,21 +18,19 @@ const options = [
 
 type Props = {
   pageApi: number;
-  updateData: (pageApi: number) => void
 };
 
-export const MovieList: React.FC<Props> = ({ updateData, pageApi }) => {
+export const MovieList: React.FC<Props> = ({ pageApi }) => {
   const [movies, setMovie] = useState([]);
   const [selectedOption, setSelectedOption] = useState<Selected | null>(null);
-  const [currentPage] = useState(0);
-  const [moviesPerPage] = useState(9);
+  const currentPage = 0;
+  const moviesPerPage = 9;
 
   useEffect(() => {
     const getMovies = async () => {
       const data = await loadGenres(selectedOption, pageApi);
 
       setMovie(data.results);
-      updateData(pageApi);
     };
 
     getMovies();

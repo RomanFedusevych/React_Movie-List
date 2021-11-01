@@ -13,8 +13,12 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
     pageNumbers.push(i);
   }
 
-  const buttonPrev = (num: number) => {
+  const setButtonPrev = (num: number) => {
     return num - 1 <= 0 ? 1 : num - 1;
+  };
+
+  const setButtonNext = (num: number) => {
+    return num < 10 ? num + 1 : num;
   };
 
   return (
@@ -24,7 +28,7 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
           ? 'pagination__button btn btn-secondary disabled'
           : 'pagination__button btn btn-dark'}
         type="button"
-        onClick={() => setPageApi(buttonPrev(pageApi))}
+        onClick={() => setPageApi(setButtonPrev(pageApi))}
       >
         Prev
       </button>
@@ -36,18 +40,13 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
               : 'pagination__item page-item'}
             key={number}
           >
-            <button
-              className="pagination__button--link"
-              type="button"
+            <a
+              href="#"
+              className="pagination__link page-link"
               onClick={() => setPageApi(number)}
             >
-              <a
-                href="/#"
-                className="pagination__link page-link"
-              >
-                {number}
-              </a>
-            </button>
+              {number}
+            </a>
           </li>
         ))}
       </ul>
@@ -56,7 +55,7 @@ export const Pagination: React.FC<Props> = ({ pageApi, setPageApi }) => {
           ? 'pagination__button btn btn-secondary disabled'
           : 'pagination__button btn btn-dark'}
         type="button"
-        onClick={() => setPageApi(pageApi <= 10 ? pageApi + 1 : pageApi)}
+        onClick={() => setPageApi(setButtonNext(pageApi))}
       >
         Next
       </button>
